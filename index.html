@@ -1,17 +1,27 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Profissional | Estudante na Área de Tecnologia</title>
     <meta name="description" content="Portfólio profissional de estudante na área de Tecnologia da Informação com ampla experiência em educação">
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Configuração do Tailwind (Mantida no Head por dependência da biblioteca) -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary:  "#8b5cf6",
+                        primary: "#8b5cf6",
                         secondary: "#6d28d9",
                         accent: "#c084fc"
                     },
@@ -22,150 +32,56 @@
             }
         }
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.25);
-        }
-
-        /* Dark Mode */
-
-body.dark-mode {
-    background-color: #111827;
-}
-
-
-/* Fundo das seções */
-body.dark-mode .bg-white {
-    background-color: #1f2937 !important;
-}
-
-body.dark-mode .bg-gray-50 {
-    background-color: #111827 !important;
-}
-
-
-/* Textos */
-body.dark-mode .text-gray-800 {
-    color: #f9fafb !important;
-}
-
-body.dark-mode .text-gray-700 {
-    color: #e5e7eb !important;
-}
-
-body.dark-mode .text-gray-600 {
-    color: #d1d5db !important;
-}
-
-body.dark-mode .text-gray-400 {
-    color: #9ca3af !important;
-}
-
-
-/* Header */
-body.dark-mode header {
-    background-color: #111827 !important;
-}
-
-
-/* Cards */
-body.dark-mode .shadow-sm,
-body.dark-mode .shadow-md {
-    background-color: #1f2937;
-}
-
-
-/* Inputs do formulário */
-body.dark-mode input,
-body.dark-mode textarea {
-    background-color: #374151 !important;
-    color: white !important;
-    border-color: #6b7280 !important;
-}
-
-
-/* Botões e links */
-body.dark-mode a {
-    color: #ddd6fe;
-}
-    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header/Navigation -->
-<header class="bg-white shadow-sm sticky top-0 z-50">
-    <nav class="container mx-auto px-6 py-4">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Nome -->
+                <div class="text-2xl font-bold text-primary">
+                    <a href="#">
+                        <span class="text-secondary">Letícia Xavier</span>
+                    </a>
+                </div>
 
-        <div class="flex justify-between items-center">
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium">Início</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium">Sobre Mim</a>
+                    <a href="#resume" class="text-gray-700 hover:text-primary font-medium">Currículo</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary font-medium">Projetos</a>
+                    <a href="#certificates" class="text-gray-700 hover:text-primary font-medium">Certificações</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contato</a>
+                </div>
 
-            <!-- Nome -->
-            <div class="text-2xl font-bold text-primary">
-                <a href="#">
-                    <span class="text-secondary">Letícia Xavier</span>
-                </a>
+                <!-- Botões -->
+                <div class="flex items-center gap-4">
+                    <!-- Modo escuro -->
+                    <button id="dark-mode-btn" class="text-gray-600 hover:text-primary text-xl">
+                        <i class="fas fa-moon"></i>
+                    </button>
+
+                    <!-- Hamburger Mobile -->
+                    <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
 
-
-            <!-- Menu Desktop -->
-            <div class="hidden md:flex items-center space-x-8">
-
-                <a href="#home" class="text-gray-700 hover:text-primary font-medium">Início</a>
-                <a href="#about" class="text-gray-700 hover:text-primary font-medium">Sobre Mim</a>
-                <a href="#resume" class="text-gray-700 hover:text-primary font-medium">Currículo</a>
-                <a href="#projects" class="text-gray-700 hover:text-primary font-medium">Projetos</a>
-                <a href="#certificates" class="text-gray-700 hover:text-primary font-medium">Certificações</a>
-                <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contato</a>
-
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium">Início</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium">Sobre Mim</a>
+                    <a href="#resume" class="text-gray-700 hover:text-primary font-medium">Currículo</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary font-medium">Projetos</a>
+                    <a href="#certificates" class="text-gray-700 hover:text-primary font-medium">Certificados</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contato</a>
+                </div>
             </div>
-
-
-            <!-- Botões -->
-            <div class="flex items-center gap-4">
-
-                <!-- Modo escuro -->
-                <button id="dark-mode-btn" class="text-gray-600 hover:text-primary text-xl">
-                    <i class="fas fa-moon"></i>
-                </button>
-
-
-                <!-- Hamburger Mobile -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-primary focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- Menu Mobile -->
-        <div id="mobile-menu" class="md:hidden hidden mt-4">
-
-            <div class="flex flex-col space-y-3">
-
-                <a href="#home" class="text-gray-700 hover:text-primary font-medium">Início</a>
-                <a href="#about" class="text-gray-700 hover:text-primary font-medium">Sobre Mim</a>
-                <a href="#resume" class="text-gray-700 hover:text-primary font-medium">Currículo</a>
-                <a href="#projects" class="text-gray-700 hover:text-primary font-medium">Projetos</a>
-                <a href="#certificates" class="text-gray-700 hover:text-primary font-medium">Certificados</a>
-                <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contato</a>
-
-            </div>
-
-        </div>
-
-    </nav>
-</header>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero-gradient text-white py-20">
@@ -188,71 +104,84 @@ body.dark-mode a {
 
     <!-- About Section -->
     <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 w-full">
-            Sobre Mim
-        </h2>
-                    
-                </div>
-                <div class="flex flex-col items-center">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Desenvolvedora em Formação</h3>
-                    <p class="text-gray-600 mb-4">Atualmente estudante de Desenvolvimento de Sistemas, estou construindo minha trajetória por meio do aprendizado contínuo e do desenvolvimento de projetos práticos. Tenho interesse em desenvolvimento web, programação e criação de interfaces modernas, buscando sempre aprimorar minhas habilidades técnicas.</p>
-                    <p class="text-gray-600 mb-6">Acredito que a tecnologia é uma ferramenta para transformar ideias em soluções. Por isso, procuro unir criatividade, dedicação e organização em cada projeto, encarando novos desafios como oportunidades de crescimento profissional.</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-gray-50 p-6 rounded-lg">
-                            <div class="text-primary text-2xl mb-3">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <h4 class="font-semibold mb-2 text-gray-800">Formação Acadêmica</h4>
-                            <p class="text-gray-600">Atualmente estou cursando o segundo ano do Ensino Médio integrado ao Ensino técnico no SENAC Paulista, em Desenvolvimento de Sistemas.</p>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Sobre Mim</h2>
+            <div class="max-w-3xl mx-auto flex flex-col items-center text-center">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Desenvolvedora em Formação</h3>
+                <p class="text-gray-600 mb-4">Atualmente estudante de Desenvolvimento de Sistemas, estou construindo minha trajetória por meio do aprendizado contínuo e do desenvolvimento de projetos práticos. Tenho interesse em desenvolvimento web, programação e criação de interfaces modernas, buscando sempre aprimorar minhas habilidades técnicas.</p>
+                <p class="text-gray-600 mb-8">Acredito que a tecnologia é uma ferramenta para transformar ideias em soluções. Por isso, procuro unir criatividade, dedicação e organização em cada projeto, encarando novos desafios como oportunidades de crescimento profissional.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full text-left">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="text-primary text-2xl mb-3">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-lg">
-                            <div class="text-primary text-2xl mb-3">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <h4 class="font-semibold mb-2 text-gray-800">Áreas de Atuação</h4>
-                            <p class="text-gray-600">Desenvolvimento Web, Análise de Sistemas, Administração de Banco de Dados.</p>
+                        <h4 class="font-semibold mb-2 text-gray-800">Formação Acadêmica</h4>
+                        <p class="text-gray-600">Atualmente estou cursando o segundo ano do Ensino Médio integrado ao Ensino técnico no SENAC Paulista, em Desenvolvimento de Sistemas.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="text-primary text-2xl mb-3">
+                            <i class="fas fa-laptop-code"></i>
                         </div>
+                        <h4 class="font-semibold mb-2 text-gray-800">Áreas de Atuação</h4>
+                        <p class="text-gray-600">Desenvolvimento Web, Análise de Sistemas, Administração de Banco de Dados.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
+   <!-- Resume Section -->
     <section id="resume" class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Currículo</h2>
             
-            <div class="flex justify-center">
-    <div class="w-full max-w-3xl">
-        <h3 class="text-2xl font-semibold mb-6 text-gray-800 flex items-center">
-            <span class="bg-primary text-white p-2 rounded-full mr-3">
-                <i class="fas fa-graduation-cap"></i>
-            </span>
-            Formação Acadêmica
-        </h3>
+            <!-- Alterado para flex-col para forçar a ficar um embaixo do outro -->
+            <div class="flex flex-col gap-8 max-w-3xl mx-auto">
+                
+                <!-- 1. Formação Acadêmica (Topo) -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 flex items-center">
+                        <span class="bg-primary text-white p-2 rounded-full mr-3">
+                            <i class="fas fa-graduation-cap"></i>
+                        </span>
+                        Formação Acadêmica
+                    </h3>
 
-        <div class="space-y-6">
-            <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
-                <h4 class="font-bold text-lg text-gray-800">Curso Técnico</h4>
-                <p class="text-gray-500 mb-2">
-                    Desenvolvimento de Sistemas, SENAC Paulista - Em curso
-                </p>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
+                            <h4 class="font-bold text-lg text-gray-800">Curso Técnico</h4>
+                            <p class="text-gray-500 mb-2">Desenvolvimento de Sistemas, SENAC Paulista - Em curso</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Experiência Profissional (Embaixo) -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 flex items-center">
+                        <span class="bg-primary text-white p-2 rounded-full mr-3">
+                            <i class="fas fa-briefcase"></i>
+                        </span>
+                        Experiência Profissional
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
+                            <h4 class="font-bold text-lg text-gray-800">Desafio Liga Jovem</h4>
+                            <p class="text-gray-600">Em grupo, estou desenvolvendo o EduLibras, uma solução digital para as dificuldades enfrentadas por alunos que possuem deficiência auditiva.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
+                            <h4 class="font-bold text-lg text-gray-800">Projeto Integrador do SENAC Paulista</h4>
+                            <p class="text-gray-600">Em 2025, tive a oportunidade de apresentar em grupo o projeto SheGo, um sistema para acolher mulheres vítimas de violência doméstica.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
-</div>
-                        
-                      
-               
-            
+                
             <!-- Skills -->
             <div class="mt-16">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-800 text-center">
-    Habilidades Técnicas
-</h3>
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 text-center">Habilidades Técnicas</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                     <div class="bg-white p-6 rounded-lg shadow-sm text-center">
@@ -270,8 +199,8 @@ body.dark-mode a {
                         <h4 class="font-bold text-gray-800 mb-2">Banco de Dados</h4>
                         <p class="text-gray-600">MySQL</p>
                     </div>
-                    
-                   
+                </div>
+            </div>
         </div>
     </section>
 
@@ -283,7 +212,7 @@ body.dark-mode a {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 card-hover">
-                    <img src="https://i.postimg.cc/ZK87M4RB/Design-sem-nome.jpg" alt="Plataforma de Ensino Adaptativo" class="w-full h-48 object-cover">
+                    <img src="https://i.postimg.cc/ZK87M4RB/Design-sem-nome.jpg" alt="EntreElas" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gray-800">EntreElas</h3>
                         <p class="text-gray-600 mb-4">Aplicativo de turismo para mulheres que utiliza recursos para aumentar a segurança durante as viagens, oferecendo informações, recomendações e suporte para uma experiência mais tranquila e confiável.</p>
@@ -292,13 +221,12 @@ body.dark-mode a {
                             <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Segurança</span>
                             <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">JS, HTML, CSS</span>
                         </div>
-                        
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
                 <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 card-hover">
-                    <img src="https://i.postimg.cc/qv7sxTCM/Design-sem-nome-(1).jpg" alt="Jogo Educacional de Programação" class="w-full h-48 object-cover">
+                    <img src="https://i.postimg.cc/qv7sxTCM/Design-sem-nome-(1).jpg" alt="SheUp" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gray-800">SheUp</h3>
                         <p class="text-gray-600 mb-4">Aplicativo criado para acolher e apoiar mulheres sobreviventes de violência doméstica, oferecendo suporte, conexão com outras mulheres e recursos para reconstruir suas vidas.</p>
@@ -307,70 +235,93 @@ body.dark-mode a {
                             <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Mulheres</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JS, HTML, CSS</span>
                         </div>
-                        
                     </div>
                 </div>
                 
                 <!-- Project 3 -->
                 <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 card-hover">
-                    <img src="https://i.postimg.cc/K8sHnQjD/Design-sem-nome-(3).jpg" alt="Sistema de Avaliação Automatizada" class="w-full h-48 object-cover">
+                    <img src="https://i.postimg.cc/MHZj77Sh/Design-sem-nome-(1).jpg" alt="EduLibras" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">EduLibras</h3>
+                        <p class="text-gray-600 mb-4">Aplicativo de acessibilidade escolar que auxilia estudantes com deficiência auditiva por meio de recursos de comunicação, inclusão e apoio ao aprendizado.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Educação</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Acessibilidade</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JS, HTML, CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 card-hover">
+                    <img src="https://i.postimg.cc/K8sHnQjD/Design-sem-nome-(3).jpg" alt="Creating Story" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-gray-800">Creating Story</h3>
                         <p class="text-gray-600 mb-4">Aplicativo de leitura e escrita que conecta leitores e autores, permitindo publicar, descobrir e acompanhar histórias de diversos gêneros em uma comunidade interativa e criativa.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Leitura</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Comunidade</span>
+                            <span class="bg-gray-100 text-black-800 text-xs px-3 py-1 rounded-full">Comunidade</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Criação de histórias</span>
                         </div>
-                        
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center mt-12">
-                
         </div>
     </section>
 
     <!-- Certificates -->
-<section id="certificates" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
-            Certificações
-        </h2>
+    <section id="certificates" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Certificações</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Certificado 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover flex flex-col justify-between">
+                    <div>
+                        <img src="https://i.postimg.cc/Gm38nxcY/certificate-leticiaxxavier144-gmail-com-5d9deede-3997-4e29-a8c5-799d08d850d0-(1).png" alt="Defesa de Rede CISCO" class="w-full h-48 object-contain rounded-lg mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Defesa de rede - CISCO</h3>
+                    </div>
+                    <a href="https://drive.google.com/file/d/11-grfKwyEsyrrZSXL8ummVe6xGn-w3a3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-primary hover:text-secondary font-medium transition duration-300 mt-2">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover">
-                <img src="https://i.postimg.cc/Gm38nxcY/certificate-leticiaxxavier144-gmail-com-5d9deede-3997-4e29-a8c5-799d08d850d0-(1).png" alt="Certificado 1" class="w-full h-48 object-contain rounded-lg mb-6">
+                <!-- Certificado 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover flex flex-col justify-between">
+                    <div>
+                        <img src="https://i.postimg.cc/pL1TbNcd/Python-Essentials-1-certificate-leticiaxxavier144-gmail-com-7bea8244-9e3c-49ac-9b26-20688e1c07d4.png" alt="Fundamentos do Python 1 CISCO" class="w-full h-48 object-contain rounded-lg mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Fundamentos do Python 1 - CISCO</h3>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1t-DyvOQcfV79ZcNP0aRY_fw76nt1rjDO/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-primary hover:text-secondary font-medium transition duration-300 mt-2">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
 
-                <h3 class="text-xl font-bold text-gray-800">
-                    Defesa de rede - CISCO
-                </h3>
+                <!-- Certificado 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover flex flex-col justify-between">
+                    <div>
+                        <img src="https://i.postimg.cc/JhkRfsBZ/Introduction-to-Cybersecurity-certificate-leticiaxxavier144-gmail-com-0ab1e687-2e72-45f9-9f80-6d090c.png" alt="Introdução à Cibersegurança CISCO" class="w-full h-48 object-contain rounded-lg mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Introdução à Cibersegurança - CISCO</h3>
+                    </div>
+                    <a href="https://drive.google.com/file/d/14B_wPIyALhzjKV4cwd7R3JxsNOTuKXu4/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-primary hover:text-secondary font-medium transition duration-300 mt-2">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
+
+                <!-- Certificado 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover flex flex-col justify-between">
+                    <div>
+                        <img src="https://i.postimg.cc/63bBPnRN/Cyber-Threat-Management-certificate-leticiaxxavier144-gmail-com-1d18417a-6ef6-4fd8-b6ba-9ae03874ed9e.png" alt="Gerenciamento de Ameaças Cibernéticas CISCO" class="w-full h-48 object-contain rounded-lg mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Gerenciamento de Ameaças Cibernéticas - CISCO</h3>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1KzJ0909mmu0VNtuTFeQWSZox-BtiL4ZU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-primary hover:text-secondary font-medium transition duration-300 mt-2">
+                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    </a>
+                </div>
             </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover">
-                <img src="https://i.postimg.cc/pL1TbNcd/Python-Essentials-1-certificate-leticiaxxavier144-gmail-com-7bea8244-9e3c-49ac-9b26-20688e1c07d4.png" alt="Certificado 2" class="w-full h-48 object-contain rounded-lg mb-6">
-
-                <h3 class="text-xl font-bold text-gray-800">
-                    Fundamentos do Python 1 - CISCO
-                </h3>
-            </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover">
-                <img src="https://i.postimg.cc/JhkRfsBZ/Introduction-to-Cybersecurity-certificate-leticiaxxavier144-gmail-com-0ab1e687-2e72-45f9-9f80-6d090c.png" alt="Certificado 3" class="w-full h-48 object-contain rounded-lg mb-6">
-
-                <h3 class="text-xl font-bold text-gray-800">
-                    Introdução à Cibersegurança - CISCO
-                </h3>
-            </div>
-
         </div>
-    </div>
-</section>
-            
-            
-          
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-6">
@@ -392,7 +343,15 @@ body.dark-mode a {
                             </div>
                         </div>
                         
-                       
+                        <div class="flex items-start">
+                            <div class="text-primary text-xl mt-1 mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Telefone</h4>
+                                <p class="text-gray-600">+55 (81) 98651-6194</p>
+                            </div>
+                        </div>
                         
                         <div class="flex items-start">
                             <div class="text-primary text-xl mt-1 mr-4">
@@ -408,69 +367,42 @@ body.dark-mode a {
                     <div class="mt-8">
                         <h4 class="font-medium text-gray-800 mb-4">Redes Sociais</h4>
                         <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/letícia-xavier-153124422" target="_blank" class="bg-gray-100 text-gray-700 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <a href="https://www.linkedin.com/in/letícia-xavier-153124422" target="_blank" class="bg-gray-100 text-black hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://github.com/leticiaxxavier144-create" target="_blank" class="bg-gray-100 text-gray-700 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <a href="https://github.com/leticiaxxavier144-create" target="_blank" class="bg-gray-100 text-black hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
                                 <i class="fab fa-github"></i>
                             </a>
-                            
                         </div>
                     </div>
                 </div>
                 
-                <form action="https://formspree.io/f/mojgjjea" method="POST" id="contact-form" class="bg-gray-50 p-8 rounded-lg">
+                <form action="https://formspree.io/f/mojgjjea" method="POST" id="contact-form" class="bg-gray-50 p-8 rounded-lg md:w-1/2">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
+                        <input type="text" id="name" name="nome" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    </div>
 
-    <div class="mb-6">
-        <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
-        <input 
-            type="text" 
-            id="name" 
-            name="nome"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" 
-            required>
-    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    </div>
 
-    <div class="mb-6">
-        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-        <input 
-            type="email" 
-            id="email" 
-            name="email"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" 
-            required>
-    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-gray-700 font-medium mb-2">Assunto</label>
+                        <input type="text" id="subject" name="assunto" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    </div>
 
-    <div class="mb-6">
-        <label for="subject" class="block text-gray-700 font-medium mb-2">Assunto</label>
-        <input 
-            type="text" 
-            id="subject" 
-            name="assunto"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" 
-            required>
-    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                        <textarea id="message" name="mensagem" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                    </div>
 
-    <div class="mb-6">
-        <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
-        <textarea 
-            id="message" 
-            name="mensagem"
-            rows="5"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" 
-            required></textarea>
-    </div>
-
-    <p id="form-message" class="text-center mb-4 font-medium"></p>
-    <button 
-        type="submit" 
-        class="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-secondary transition duration-300">
-        Enviar Mensagem
-    </button>
-
-</form>
-                  
-                </div>
+                    <p id="form-message" class="text-center mb-4 font-medium"></p>
+                    <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-secondary transition duration-300">
+                        Enviar Mensagem
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -495,13 +427,11 @@ body.dark-mode a {
                         </ul>
                     </div>
                     
-                    
-                    
                     <div>
                         <h4 class="font-bold text-lg mb-4">Contato</h4>
                         <ul class="space-y-2">
                             <li class="text-gray-400">leticiaxxss144@gmail.com</li>
-                           
+                            <li class="text-gray-400">+55 (81) 98651-6194</li>
                             <li class="text-gray-400">Pernambuco, Brasil</li>
                         </ul>
                     </div>
@@ -518,120 +448,17 @@ body.dark-mode a {
                     <a href="https://github.com/leticiaxxavier144-create" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
                         <i class="fab fa-github"></i>
                     </a>
-                    
-                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hidden">
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hidden hover:bg-secondary transition duration-300">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- PHP Contact Form Processing -->
-    <script>
-      
-
-    // Mobile Menu Toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-
-    // Dark Mode
-
-    const darkButton = document.getElementById("dark-mode-btn");
-
-    darkButton.addEventListener("click", () => {
-
-        document.body.classList.toggle("dark-mode");
-
-        if(document.body.classList.contains("dark-mode")) {
-            darkButton.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            darkButton.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-
-    });
-
-
-    // Back to Top Button
-
-    const backToTopButton = document.getElementById('back-to-top');
-
-    window.addEventListener('scroll', () => {
-
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.remove('hidden');
-        } else {
-            backToTopButton.classList.add('hidden');
-        }
-
-    });
-
-    // Voltar ao topo ao clicar na seta
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Validação do formulário
-
-const form = document.getElementById("contact-form");
-const message = document.getElementById("form-message");
-
-
-form.addEventListener("submit", function(event){
-
-    const nome = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const texto = document.getElementById("message").value;
-
-
-    if(nome.length < 3){
-
-        event.preventDefault();
-
-        message.innerHTML = "Digite um nome válido.";
-        message.style.color = "red";
-
-        return;
-    }
-
-
-    if(!email.includes("@")){
-
-        event.preventDefault();
-
-        message.innerHTML = "Digite um email válido.";
-        message.style.color = "red";
-
-        return;
-    }
-
-
-    if(texto.length < 10){
-
-        event.preventDefault();
-
-        message.innerHTML = "A mensagem precisa ter pelo menos 10 caracteres.";
-        message.style.color = "red";
-
-        return;
-    }
-
-
-    message.innerHTML = "Mensagem enviada com sucesso!";
-    message.style.color = "green";
-
-});
-
-</script>
+    <!-- Script JS Local -->
+    <script src="script.js"></script>
+</body>
+</html>

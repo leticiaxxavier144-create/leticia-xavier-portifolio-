@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.25);
+}
+
+/* ================= Dark Mode ================= */
+
+body.dark-mode {
+    background-color: #111827;
+}
+
+/* Fundo das seções */
+body.dark-mode .bg-white {
+    background-color: #1f2937 !important;
+}
+
+body.dark-mode .bg-gray-50 {
+    background-color: #111827 !important;
+}
+
+/* Textos */
+body.dark-mode .text-gray-800 {
+    color: #f9fafb !important;
+}
+
+body.dark-mode .text-gray-700 {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode .text-gray-600 {
+    color: #d1d5db !important;
+}
+
+body.dark-mode .text-gray-400 {
+    color: #9ca3af !important;
+}
+
+/* Header */
+body.dark-mode header {
+    background-color: #111827 !important;
+}
+
+/* Cards */
+body.dark-mode .shadow-sm,
+body.dark-mode .shadow-md {
+    background-color: #1f2937;
+}
+
+/* Inputs do formulário */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #374151 !important;
+    color: white !important;
+    border-color: #6b7280 !important;
+}
+
+/* Botões e links */
+body.dark-mode a {
+    color: #ddd6fe;
+}
