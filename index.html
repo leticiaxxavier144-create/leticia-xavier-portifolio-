@@ -6,24 +6,20 @@
     <title>Portfólio Profissional | Estudante na Área de Tecnologia</title>
     <meta name="description" content="Portfólio profissional de estudante na área de Tecnologia da Informação com ampla experiência em educação">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Configuração do Tailwind (Mantida no Head por dependência da biblioteca) -->
     <script>
         tailwind.config = {
+            darkMode: 'class', /* Permite alternar via classe .dark no HTML/Body */
             theme: {
                 extend: {
                     colors: {
-                        primary: "#8b5cf6",
-                        secondary: "#6d28d9",
-                        accent: "#c084fc"
+                        primary: "#e11d48",
+                        secondary: "#be123c",
+                        accent: "#f43f5e",
+                        softBg: "#fff1f2",
+                        cardBg: "#ffffff"
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -32,140 +28,133 @@
             }
         }
     </script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50">
-    <!-- Header/Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+<body class="bg-[#fff5f6] text-gray-700 dark:bg-[#12090c] dark:text-[#fce7f3] antialiased transition-colors duration-300">
+    
+    <header class="bg-white/80 dark:bg-[#1c0f14]/80 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all border-b dark:border-rose-900/30">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <!-- Nome -->
-                <div class="text-2xl font-bold text-primary">
-                    <a href="#">
-                        <span class="text-secondary">Letícia Xavier</span>
+                <div class="text-2xl font-bold">
+                    <a href="#" class="tracking-tight hover:opacity-80 transition-opacity">
+                        <span class="text-rose-600 dark:text-rose-400">Letícia Xavier</span>
                     </a>
                 </div>
 
-                <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary font-medium">Início</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary font-medium">Sobre Mim</a>
-                    <a href="#resume" class="text-gray-700 hover:text-primary font-medium">Currículo</a>
-                    <a href="#projects" class="text-gray-700 hover:text-primary font-medium">Projetos</a>
-                    <a href="#certificates" class="text-gray-700 hover:text-primary font-medium">Certificações</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contato</a>
+                    <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 dark:hover:text-rose-400 font-medium transition-colors">Início</a>
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 dark:hover:text-rose-400 font-medium transition-colors">Sobre Mim</a>
+                    <a href="#resume" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 dark:hover:text-rose-400 font-medium transition-colors">Currículo</a>
+                    <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 dark:hover:text-rose-400 font-medium transition-colors">Projetos</a>
+                    <a href="#certificates" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 dark:hover:text-rose-400 font-medium transition-colors">Certificações</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 dark:hover:text-rose-400 font-medium transition-colors">Contato</a>
                 </div>
 
-                <!-- Botões -->
                 <div class="flex items-center gap-4">
-                    <!-- Modo escuro -->
-                    <button id="dark-mode-btn" class="text-gray-600 hover:text-primary text-xl">
+                    <button id="dark-mode-btn" class="text-rose-500 hover:text-rose-600 text-xl transition-colors p-2 rounded-full hover:bg-rose-100 dark:hover:bg-rose-900/40">
                         <i class="fas fa-moon"></i>
                     </button>
 
-                    <!-- Hamburger Mobile -->
-                    <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-primary focus:outline-none">
+                    <button id="mobile-menu-button" class="md:hidden text-gray-600 dark:text-gray-300 hover:text-rose-600 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Menu Mobile -->
-            <div id="mobile-menu" class="md:hidden hidden mt-4">
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-rose-100 dark:border-rose-900/40 pt-4">
                 <div class="flex flex-col space-y-3">
-                    <a href="#home" class="text-gray-700 hover:text-primary font-medium">Início</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary font-medium">Sobre Mim</a>
-                    <a href="#resume" class="text-gray-700 hover:text-primary font-medium">Currículo</a>
-                    <a href="#projects" class="text-gray-700 hover:text-primary font-medium">Projetos</a>
-                    <a href="#certificates" class="text-gray-700 hover:text-primary font-medium">Certificados</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contato</a>
+                    <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 font-medium">Início</a>
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 font-medium">Sobre Mim</a>
+                    <a href="#resume" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 font-medium">Currículo</a>
+                    <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 font-medium">Projetos</a>
+                    <a href="#certificates" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 font-medium">Certificados</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-rose-600 font-medium">Contato</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white py-20">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
+    <section id="home" class="hero-gradient text-white py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Criando soluções com dedicação e criatividade.</h1>
-                    <p class="text-xl mb-8">Desenvolvedora em formação, dedicada ao aprendizado contínuo e à criação de projetos modernos e eficientes.</p>
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Criando soluções com dedicação e criatividade.</h1>
+                    <p class="text-lg md:text-xl mb-8 text-rose-50 font-light leading-relaxed">Desenvolvedora em formação, dedicada ao aprendizado contínuo e à criação de projetos modernos e eficientes.</p>
                     <div class="flex space-x-4">
-                        <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300">Entre em Contato</a>
-                        <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition duration-300">Ver Projetos</a>
+                        <a href="#contact" class="bg-white text-rose-600 px-6 py-3 rounded-full font-semibold hover:bg-rose-50 transition duration-300 shadow-md">Entre em Contato</a>
+                        <a href="#projects" class="border-2 border-white/80 text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-rose-600 transition duration-300">Ver Projetos</a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
-                    <img src="https://static.onecompiler.com/images/users/44h7k4dhn/t_4001754473.jpg" alt="Estudante de ADS" class="rounded-full border-4 border-white shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-white/30 rounded-full blur-md"></div>
+                        <img src="https://static.onecompiler.com/images/users/44h7k4dhn/t_4001754473.jpg" alt="Estudante de ADS" class="relative rounded-full border-4 border-white shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
+    <section id="about" class="py-20 bg-white dark:bg-[#1c0f14] transition-colors">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Sobre Mim</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-rose-950 dark:text-rose-200 tracking-tight">Sobre Mim</h2>
             <div class="max-w-3xl mx-auto flex flex-col items-center text-center">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Desenvolvedora em Formação</h3>
-                <p class="text-gray-600 mb-4">Atualmente estudante de Desenvolvimento de Sistemas, estou construindo minha trajetória por meio do aprendizado contínuo e do desenvolvimento de projetos práticos. Tenho interesse em desenvolvimento web, programação e criação de interfaces modernas, buscando sempre aprimorar minhas habilidades técnicas.</p>
-                <p class="text-gray-600 mb-8">Acredito que a tecnologia é uma ferramenta para transformar ideias em soluções. Por isso, procuro unir criatividade, dedicação e organização em cada projeto, encarando novos desafios como oportunidades de crescimento profissional.</p>
+                <h3 class="text-2xl font-semibold mb-4 text-rose-800 dark:text-rose-400">Desenvolvedora em Formação</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">Atualmente estudante de Desenvolvimento de Sistemas, estou construindo minha trajetória por meio do aprendizado contínuo e do desenvolvimento de projetos práticos. Tenho interesse em desenvolvimento web, programação e criação de interfaces modernas, buscando sempre aprimorar minhas habilidades técnicas.</p>
+                <p class="text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">Acredito que a tecnologia é uma ferramenta para transformar ideias em soluções. Por isso, procuro unir criatividade, dedicação e organização em cada projeto, encarando novos desafios como oportunidades de crescimento profissional.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full text-left">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="text-primary text-2xl mb-3">
+                    <div class="bg-rose-50/60 dark:bg-rose-950/20 p-8 rounded-2xl border border-rose-100 dark:border-rose-900/40 shadow-sm">
+                        <div class="text-rose-500 dark:text-rose-400 text-2xl mb-4 bg-white dark:bg-rose-900/40 w-12 h-12 rounded-xl flex items-center justify-center shadow-sm">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h4 class="font-semibold mb-2 text-gray-800">Formação Acadêmica</h4>
-                        <p class="text-gray-600">Atualmente estou cursando o segundo ano do Ensino Médio integrado ao Ensino técnico no SENAC Paulista, em Desenvolvimento de Sistemas.</p>
+                        <h4 class="font-bold mb-2 text-gray-800 dark:text-rose-100 text-lg">Formação Acadêmica</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Atualmente estou cursando o segundo ano do Ensino Médio integrado ao Ensino técnico no SENAC Paulista, em Desenvolvimento de Sistemas.</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="text-primary text-2xl mb-3">
+                    <div class="bg-rose-50/60 dark:bg-rose-950/20 p-8 rounded-2xl border border-rose-100 dark:border-rose-900/40 shadow-sm">
+                        <div class="text-rose-500 dark:text-rose-400 text-2xl mb-4 bg-white dark:bg-rose-900/40 w-12 h-12 rounded-xl flex items-center justify-center shadow-sm">
                             <i class="fas fa-laptop-code"></i>
                         </div>
-                        <h4 class="font-semibold mb-2 text-gray-800">Áreas de Atuação</h4>
-                        <p class="text-gray-600">Desenvolvimento Web, Análise de Sistemas, Administração de Banco de Dados.</p>
+                        <h4 class="font-bold mb-2 text-gray-800 dark:text-rose-100 text-lg">Áreas de Atuação</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Desenvolvimento Web, Análise de Sistemas, Administração de Banco de Dados.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- Resume Section -->
-    <section id="resume" class="py-16 bg-gray-50">
+    <section id="resume" class="py-20 bg-[#fff5f6] dark:bg-[#12090c] transition-colors">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Currículo</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-rose-950 dark:text-rose-200 tracking-tight">Currículo</h2>
             
-            <!-- Alterado para flex-col para forçar a ficar um embaixo do outro -->
-            <div class="flex flex-col gap-8 max-w-3xl mx-auto">
-                
-                <!-- 1. Formação Acadêmica (Topo) -->
+            <div class="flex flex-col gap-10 max-w-3xl mx-auto">
                 <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 flex items-center">
-                        <span class="bg-primary text-white p-2 rounded-full mr-3">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-100 flex items-center">
+                        <span class="bg-rose-500 text-white p-3 rounded-xl mr-4 shadow-sm">
                             <i class="fas fa-graduation-cap"></i>
                         </span>
                         Formação Acadêmica
                     </h3>
 
                     <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
-                            <h4 class="font-bold text-lg text-gray-800">Curso Técnico</h4>
-                            <p class="text-gray-500 mb-2">Desenvolvimento de Sistemas, SENAC Paulista - Em curso</p>
+                        <div class="bg-white dark:bg-[#1c0f14] p-6 rounded-2xl shadow-sm border-l-4 border-rose-400 dark:border-rose-500">
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-gray-100">Curso Técnico</h4>
+                            <p class="text-rose-500 dark:text-rose-400 font-medium mb-2 text-sm">Desenvolvimento de Sistemas, SENAC Paulista - Em curso</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Experiência Profissional (Embaixo) -->
                 <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 flex items-center">
-                        <span class="bg-primary text-white p-2 rounded-full mr-3">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-100 flex items-center">
+                        <span class="bg-rose-500 text-white p-3 rounded-xl mr-4 shadow-sm">
                             <i class="fas fa-briefcase"></i>
                         </span>
                         Experiência Profissional
                     </h3>
 
                     <div class="space-y-6">
+<<<<<<< HEAD
                         <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
                             <h4 class="font-bold text-lg text-gray-800">Desafio Liga Jovem</h4>
                             <p class="text-gray-600">Em grupo, participei do desenvolvimento do EduLibras, uma solução digital voltada às dificuldades enfrentadas por alunos com deficiência auditiva.</p>
@@ -173,95 +162,97 @@
                         <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
                             <h4 class="font-bold text-lg text-gray-800">Projeto Integrador do SENAC Paulista</h4>
                             <p class="text-gray-600">Em 2025, tive a oportunidade de desenvolver e apresentar em grupo o projeto SheUp, um sistema para acolher mulheres vítimas de violência doméstica.</p>
+=======
+                        <div class="bg-white dark:bg-[#1c0f14] p-6 rounded-2xl shadow-sm border-l-4 border-rose-400 dark:border-rose-500">
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-gray-100 mb-1">Desafio Liga Jovem</h4>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">Em grupo, participei do desenvolvimento do EduLibras, uma solução digital voltada às dificuldades enfrentadas por alunos com deficiência auditiva.</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1c0f14] p-6 rounded-2xl shadow-sm border-l-4 border-rose-400 dark:border-rose-500">
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-gray-100 mb-1">Projeto Integrador do SENAC Paulista</h4>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">Em 2025, tive a oportunidade de desenvolver e apresentar em grupo o projeto SheUp, um sistema para acolher mulheres vítimas de violência doméstica.</p>
+>>>>>>> 8f8edfe (Nova versão do portifólio)
                         </div>
                     </div>
                 </div>
-
             </div>
                 
-            <!-- Skills -->
-            <div class="mt-16">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-800 text-center">Habilidades Técnicas</h3>
+            <div class="mt-20">
+                <h3 class="text-2xl font-semibold mb-8 text-gray-800 dark:text-gray-100 text-center">Habilidades Técnicas</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                    <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-                        <div class="text-primary text-4xl mb-3">
+                    <div class="bg-white dark:bg-[#1c0f14] p-8 rounded-2xl shadow-sm text-center border border-rose-100 dark:border-rose-900/40">
+                        <div class="text-rose-500 dark:text-rose-400 text-3xl mb-3">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h4 class="font-bold text-gray-800 mb-2">Linguagens de Programação</h4>
-                        <p class="text-gray-600">Python, JavaScript</p>
+                        <h4 class="font-bold text-gray-800 dark:text-gray-100 mb-1">Linguagens de Programação</h4>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium">Python, JavaScript</p>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-                        <div class="text-primary text-4xl mb-3">
+                    <div class="bg-white dark:bg-[#1c0f14] p-8 rounded-2xl shadow-sm text-center border border-rose-100 dark:border-rose-900/40">
+                        <div class="text-rose-500 dark:text-rose-400 text-3xl mb-3">
                             <i class="fas fa-database"></i>
                         </div>
-                        <h4 class="font-bold text-gray-800 mb-2">Banco de Dados</h4>
-                        <p class="text-gray-600">MySQL</p>
+                        <h4 class="font-bold text-gray-800 dark:text-gray-100 mb-1">Banco de Dados</h4>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium">MySQL</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white">
+    <section id="projects" class="py-20 bg-white dark:bg-[#1c0f14] transition-colors">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Projetos</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-rose-950 dark:text-rose-200 tracking-tight">Projetos</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 card-hover">
+                <div class="bg-rose-50/40 dark:bg-rose-950/20 border border-rose-100 dark:border-rose-900/40 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 card-hover">
                     <img src="https://i.postimg.cc/ZK87M4RB/Design-sem-nome.jpg" alt="EntreElas" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800">EntreElas</h3>
-                        <p class="text-gray-600 mb-4">Aplicativo de turismo para mulheres que utiliza recursos para aumentar a segurança durante as viagens, oferecendo informações, recomendações e suporte para uma experiência mais tranquila e confiável.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Turismo</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Segurança</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">JS, HTML, CSS</span>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-rose-100">EntreElas</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">Aplicativo de turismo para mulheres que utiliza recursos para aumentar a segurança durante as viagens, oferecendo informações, recomendações e suporte para uma experiência mais tranquila e confiável.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-rose-100 dark:bg-rose-900/60 text-rose-700 dark:text-rose-200 text-xs px-3 py-1 rounded-full font-medium">Turismo</span>
+                            <span class="bg-pink-100 dark:bg-pink-900/60 text-pink-700 dark:text-pink-200 text-xs px-3 py-1 rounded-full font-medium">Segurança</span>
+                            <span class="bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-300 text-xs px-3 py-1 rounded-full font-medium border border-rose-200 dark:border-rose-800">JS, HTML, CSS</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 card-hover">
+                <div class="bg-rose-50/40 dark:bg-rose-950/20 border border-rose-100 dark:border-rose-900/40 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 card-hover">
                     <img src="https://i.postimg.cc/qv7sxTCM/Design-sem-nome-(1).jpg" alt="SheUp" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800">SheUp</h3>
-                        <p class="text-gray-600 mb-4">Aplicativo criado para acolher e apoiar mulheres sobreviventes de violência doméstica, oferecendo suporte, conexão com outras mulheres e recursos para reconstruir suas vidas.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Rede de apoio</span>
-                            <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Mulheres</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JS, HTML, CSS</span>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-rose-100">SheUp</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">Aplicativo criado para acolher e apoiar mulheres sobreviventes de violência doméstica, oferecendo suporte, conexão com outras mulheres e recursos para reconstruir suas vidas.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-rose-100 dark:bg-rose-900/60 text-rose-700 dark:text-rose-200 text-xs px-3 py-1 rounded-full font-medium">Rede de apoio</span>
+                            <span class="bg-pink-100 dark:bg-pink-900/60 text-pink-700 dark:text-pink-200 text-xs px-3 py-1 rounded-full font-medium">Mulheres</span>
+                            <span class="bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-300 text-xs px-3 py-1 rounded-full font-medium border border-rose-200 dark:border-rose-800">JS, HTML, CSS</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 card-hover">
+                <div class="bg-rose-50/40 dark:bg-rose-950/20 border border-rose-100 dark:border-rose-900/40 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 card-hover">
                     <img src="https://i.postimg.cc/MHZj77Sh/Design-sem-nome-(1).jpg" alt="EduLibras" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800">EduLibras</h3>
-                        <p class="text-gray-600 mb-4">Aplicativo de acessibilidade escolar que auxilia estudantes com deficiência auditiva por meio de recursos de comunicação, inclusão e apoio ao aprendizado.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Educação</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Acessibilidade</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JS, HTML, CSS</span>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-rose-100">EduLibras</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">Aplicativo de acessibilidade escolar que auxilia estudantes com deficiência auditiva por meio de recursos de comunicação, inclusão e apoio ao aprendizado.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-rose-100 dark:bg-rose-900/60 text-rose-700 dark:text-rose-200 text-xs px-3 py-1 rounded-full font-medium">Educação</span>
+                            <span class="bg-pink-100 dark:bg-pink-900/60 text-pink-700 dark:text-pink-200 text-xs px-3 py-1 rounded-full font-medium">Acessibilidade</span>
+                            <span class="bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-300 text-xs px-3 py-1 rounded-full font-medium border border-rose-200 dark:border-rose-800">JS, HTML, CSS</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 4 -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 card-hover">
+                <div class="bg-rose-50/40 dark:bg-rose-950/20 border border-rose-100 dark:border-rose-900/40 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 card-hover">
                     <img src="https://i.postimg.cc/K8sHnQjD/Design-sem-nome-(3).jpg" alt="Creating Story" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800">Creating Story</h3>
-                        <p class="text-gray-600 mb-4">Aplicativo de leitura e escrita que conecta leitores e autores, permitindo publicar, descobrir e acompanhar histórias de diversos gêneros em uma comunidade interativa e criativa.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Leitura</span>
-                            <span class="bg-gray-100 text-black-800 text-xs px-3 py-1 rounded-full">Comunidade</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Criação de histórias</span>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-rose-100">Creating Story</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">Aplicativo de leitura e escrita que conecta leitores e autores, permitindo publicar, descobrir e acompanhar histórias de diversos gêneros em uma comunidade interativa e criativa.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-rose-100 dark:bg-rose-900/60 text-rose-700 dark:text-rose-200 text-xs px-3 py-1 rounded-full font-medium">Leitura</span>
+                            <span class="bg-pink-100 dark:bg-pink-900/60 text-pink-700 dark:text-pink-200 text-xs px-3 py-1 rounded-full font-medium">Comunidade</span>
+                            <span class="bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-300 text-xs px-3 py-1 rounded-full font-medium border border-rose-200 dark:border-rose-800">Criação de histórias</span>
                         </div>
                     </div>
                 </div>
@@ -269,137 +260,131 @@
         </div>
     </section>
 
-    <!-- Certificates -->
-    <section id="certificates" class="py-16 bg-gray-50">
+    <section id="certificates" class="py-20 bg-[#fff5f6] dark:bg-[#12090c] transition-colors">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Certificações</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-rose-950 dark:text-rose-200 tracking-tight">Certificações</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Certificado 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover flex flex-col justify-between">
+                <div class="bg-white dark:bg-[#1c0f14] p-6 rounded-2xl shadow-sm text-center transition-all duration-300 card-hover flex flex-col justify-between border border-rose-100 dark:border-rose-900/40">
                     <div>
-                        <img src="https://i.postimg.cc/Gm38nxcY/certificate-leticiaxxavier144-gmail-com-5d9deede-3997-4e29-a8c5-799d08d850d0-(1).png" alt="Defesa de Rede CISCO" class="w-full h-48 object-contain rounded-lg mb-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Defesa de rede - CISCO</h3>
+                        <img src="https://i.postimg.cc/Gm38nxcY/certificate-leticiaxxavier144-gmail-com-5d9deede-3997-4e29-a8c5-799d08d850d0-(1).png" alt="Defesa de Rede CISCO" class="w-full h-40 object-contain rounded-xl mb-4 bg-rose-50/30 dark:bg-rose-950/40 p-2">
+                        <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-4">Defesa de rede - CISCO</h3>
                     </div>
-                    <a href="https://drive.google.com/file/d/11-grfKwyEsyrrZSXL8ummVe6xGn-w3a3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-primary hover:text-secondary font-medium transition duration-300 mt-2">
-                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    <a href="https://drive.google.com/file/d/11-grfKwyEsyrrZSXL8ummVe6xGn-w3a3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-rose-600 dark:text-rose-400 hover:text-rose-800 font-medium text-sm transition duration-300">
+                        <i class="fas fa-external-link-alt text-xs"></i> Ver Certificado
                     </a>
                 </div>
 
-                <!-- Certificado 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover flex flex-col justify-between">
+                <div class="bg-white dark:bg-[#1c0f14] p-6 rounded-2xl shadow-sm text-center transition-all duration-300 card-hover flex flex-col justify-between border border-rose-100 dark:border-rose-900/40">
                     <div>
-                        <img src="https://i.postimg.cc/pL1TbNcd/Python-Essentials-1-certificate-leticiaxxavier144-gmail-com-7bea8244-9e3c-49ac-9b26-20688e1c07d4.png" alt="Fundamentos do Python 1 CISCO" class="w-full h-48 object-contain rounded-lg mb-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Fundamentos do Python 1 - CISCO</h3>
+                        <img src="https://i.postimg.cc/pL1TbNcd/Python-Essentials-1-certificate-leticiaxxavier144-gmail-com-7bea8244-9e3c-49ac-9b26-20688e1c07d4.png" alt="Fundamentos do Python 1 CISCO" class="w-full h-40 object-contain rounded-xl mb-4 bg-rose-50/30 dark:bg-rose-950/40 p-2">
+                        <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-4">Fundamentos do Python 1 - CISCO</h3>
                     </div>
-                    <a href="https://drive.google.com/file/d/1t-DyvOQcfV79ZcNP0aRY_fw76nt1rjDO/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-primary hover:text-secondary font-medium transition duration-300 mt-2">
-                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    <a href="https://drive.google.com/file/d/1t-DyvOQcfV79ZcNP0aRY_fw76nt1rjDO/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-rose-600 dark:text-rose-400 hover:text-rose-800 font-medium text-sm transition duration-300">
+                        <i class="fas fa-external-link-alt text-xs"></i> Ver Certificado
                     </a>
                 </div>
 
-                <!-- Certificado 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover flex flex-col justify-between">
+                <div class="bg-white dark:bg-[#1c0f14] p-6 rounded-2xl shadow-sm text-center transition-all duration-300 card-hover flex flex-col justify-between border border-rose-100 dark:border-rose-900/40">
                     <div>
-                        <img src="https://i.postimg.cc/JhkRfsBZ/Introduction-to-Cybersecurity-certificate-leticiaxxavier144-gmail-com-0ab1e687-2e72-45f9-9f80-6d090c.png" alt="Introdução à Cibersegurança CISCO" class="w-full h-48 object-contain rounded-lg mb-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Introdução à Cibersegurança - CISCO</h3>
+                        <img src="https://i.postimg.cc/JhkRfsBZ/Introduction-to-Cybersecurity-certificate-leticiaxxavier144-gmail-com-0ab1e687-2e72-45f9-9f80-6d090c.png" alt="Introdução à Cibersegurança CISCO" class="w-full h-40 object-contain rounded-xl mb-4 bg-rose-50/30 dark:bg-rose-950/40 p-2">
+                        <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-4">Introdução à Cibersegurança - CISCO</h3>
                     </div>
-                    <a href="https://drive.google.com/file/d/14B_wPIyALhzjKV4cwd7R3JxsNOTuKXu4/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-primary hover:text-secondary font-medium transition duration-300 mt-2">
-                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    <a href="https://drive.google.com/file/d/14B_wPIyALhzjKV4cwd7R3JxsNOTuKXu4/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-rose-600 dark:text-rose-400 hover:text-rose-800 font-medium text-sm transition duration-300">
+                        <i class="fas fa-external-link-alt text-xs"></i> Ver Certificado
                     </a>
                 </div>
 
-                <!-- Certificado 4 -->
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition duration-300 card-hover flex flex-col justify-between">
+                <div class="bg-white dark:bg-[#1c0f14] p-6 rounded-2xl shadow-sm text-center transition-all duration-300 card-hover flex flex-col justify-between border border-rose-100 dark:border-rose-900/40">
                     <div>
-                        <img src="https://i.postimg.cc/63bBPnRN/Cyber-Threat-Management-certificate-leticiaxxavier144-gmail-com-1d18417a-6ef6-4fd8-b6ba-9ae03874ed9e.png" alt="Gerenciamento de Ameaças Cibernéticas CISCO" class="w-full h-48 object-contain rounded-lg mb-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Gerenciamento de Ameaças Cibernéticas - CISCO</h3>
+                        <img src="https://i.postimg.cc/63bBPnRN/Cyber-Threat-Management-certificate-leticiaxxavier144-gmail-com-1d18417a-6ef6-4fd8-b6ba-9ae03874ed9e.png" alt="Gerenciamento de Ameaças Cibernéticas CISCO" class="w-full h-40 object-contain rounded-xl mb-4 bg-rose-50/30 dark:bg-rose-950/40 p-2">
+                        <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-4">Gerenciamento de Ameaças - CISCO</h3>
                     </div>
-                    <a href="https://drive.google.com/file/d/1KzJ0909mmu0VNtuTFeQWSZox-BtiL4ZU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-primary hover:text-secondary font-medium transition duration-300 mt-2">
-                        <i class="fas fa-external-link-alt"></i> Ver Certificado
+                    <a href="https://drive.google.com/file/d/1KzJ0909mmu0VNtuTFeQWSZox-BtiL4ZU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-rose-600 dark:text-rose-400 hover:text-rose-800 font-medium text-sm transition duration-300">
+                        <i class="fas fa-external-link-alt text-xs"></i> Ver Certificado
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
+    <section id="contact" class="py-20 bg-white dark:bg-[#1c0f14] transition-colors">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Contato</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-rose-950 dark:text-rose-200 tracking-tight">Contato</h2>
             
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Entre em Contato</h3>
-                    <p class="text-gray-600 mb-8">Fique à vontade para entrar em contato. Estou aberta a novas conexões, projetos e oportunidades de colaboração.</p>
+            <div class="flex flex-col md:flex-row gap-12 max-w-5xl mx-auto">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Entre em Contato</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">Fique à vontade para entrar em contato. Estou aberta a novas conexões, projetos e oportunidades de colaboração.</p>
                     
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="text-primary text-xl mt-1 mr-4">
-                                <i class="fas fa-envelope"></i>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="text-rose-500 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/40 w-12 h-12 rounded-xl flex items-center justify-center mr-4 shadow-sm">
+                                <i class="fas fa-envelope text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800">Email</h4>
-                                <p class="text-gray-600">leticiaxxss144@gmail.com</p>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 text-sm">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-400">leticiaxxss144@gmail.com</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-start">
-                            <div class="text-primary text-xl mt-1 mr-4">
-                                <i class="fas fa-phone-alt"></i>
+                        <div class="flex items-center">
+                            <div class="text-rose-500 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/40 w-12 h-12 rounded-xl flex items-center justify-center mr-4 shadow-sm">
+                                <i class="fas fa-phone-alt text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800">Telefone</h4>
-                                <p class="text-gray-600">+55 (81) 98651-6194</p>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 text-sm">Telefone</h4>
+                                <p class="text-gray-600 dark:text-gray-400">+55 (81) 98651-6194</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-start">
-                            <div class="text-primary text-xl mt-1 mr-4">
-                                <i class="fas fa-map-marker-alt"></i>
+                        <div class="flex items-center">
+                            <div class="text-rose-500 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/40 w-12 h-12 rounded-xl flex items-center justify-center mr-4 shadow-sm">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800">Localização</h4>
-                                <p class="text-gray-600">Pernambuco, Brasil</p>
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 text-sm">Localização</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Pernambuco, Brasil</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="mt-8">
-                        <h4 class="font-medium text-gray-800 mb-4">Redes Sociais</h4>
-                        <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/letícia-xavier-153124422" target="_blank" class="bg-gray-100 text-black hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                    <div class="mt-10">
+                        <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-4 text-sm">Redes Sociais</h4>
+                        <div class="flex space-x-3">
+                            <a href="https://www.linkedin.com/in/letícia-xavier-153124422" target="_blank" class="bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 hover:bg-rose-500 hover:text-white w-10 h-10 rounded-xl flex items-center justify-center transition duration-300">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://github.com/leticiaxxavier144-create" target="_blank" class="bg-gray-100 text-black hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <a href="https://github.com/leticiaxxavier144-create" target="_blank" class="bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 hover:bg-rose-500 hover:text-white w-10 h-10 rounded-xl flex items-center justify-center transition duration-300">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <form action="https://formspree.io/f/mojgjjea" method="POST" id="contact-form" class="bg-gray-50 p-8 rounded-lg md:w-1/2">
-                    <div class="mb-6">
-                        <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
-                        <input type="text" id="name" name="nome" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                <form action="https://formspree.io/f/mojgjjea" method="POST" id="contact-form" class="bg-[#fff5f6] dark:bg-[#12090c] p-8 rounded-2xl border border-rose-100 dark:border-rose-900/40 shadow-sm md:w-1/2">
+                    <div class="mb-5">
+                        <label for="name" class="block text-gray-700 dark:text-gray-200 font-medium mb-2 text-sm">Nome</label>
+                        <input type="text" id="name" name="nome" class="w-full px-4 py-3 bg-white dark:bg-[#1c0f14] dark:text-white border border-rose-200 dark:border-rose-900/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 transition-all" required>
                     </div>
 
-                    <div class="mb-6">
-                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    <div class="mb-5">
+                        <label for="email" class="block text-gray-700 dark:text-gray-200 font-medium mb-2 text-sm">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-white dark:bg-[#1c0f14] dark:text-white border border-rose-200 dark:border-rose-900/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 transition-all" required>
                     </div>
 
-                    <div class="mb-6">
-                        <label for="subject" class="block text-gray-700 font-medium mb-2">Assunto</label>
-                        <input type="text" id="subject" name="assunto" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    <div class="mb-5">
+                        <label for="subject" class="block text-gray-700 dark:text-gray-200 font-medium mb-2 text-sm">Assunto</label>
+                        <input type="text" id="subject" name="assunto" class="w-full px-4 py-3 bg-white dark:bg-[#1c0f14] dark:text-white border border-rose-200 dark:border-rose-900/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 transition-all" required>
                     </div>
 
-                    <div class="mb-6">
-                        <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
-                        <textarea id="message" name="mensagem" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                    <div class="mb-5">
+                        <label for="message" class="block text-gray-700 dark:text-gray-200 font-medium mb-2 text-sm">Mensagem</label>
+                        <textarea id="message" name="mensagem" rows="4" class="w-full px-4 py-3 bg-white dark:bg-[#1c0f14] dark:text-white border border-rose-200 dark:border-rose-900/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 transition-all" required></textarea>
                     </div>
 
                     <p id="form-message" class="text-center mb-4 font-medium"></p>
-                    <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-secondary transition duration-300">
+                    <button type="submit" class="w-full bg-rose-500 text-white py-3.5 px-6 rounded-xl font-semibold hover:bg-rose-600 transition duration-300 shadow-sm">
                         Enviar Mensagem
                     </button>
                 </form>
@@ -407,58 +392,55 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-rose-950 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-8 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-4"><span class="text-primary">Letícia Xavier</span></h3>
-                    <p class="text-gray-400 max-w-md">Desenvolvedora em formação, dedicada ao aprendizado contínuo e à criação de projetos modernos e eficientes.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-rose-300">Letícia Xavier</h3>
+                    <p class="text-rose-200/70 max-w-md text-sm leading-relaxed">Desenvolvedora em formação, dedicada ao aprendizado contínuo e à criação de projetos modernos e eficientes.</p>
                 </div>
                 
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
                     <div>
-                        <h4 class="font-bold text-lg mb-4">Links Rápidos</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Início</a></li>
-                            <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">Sobre Mim</a></li>
-                            <li><a href="#resume" class="text-gray-400 hover:text-white transition duration-300">Currículo</a></li>
-                            <li><a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Projetos</a></li>
+                        <h4 class="font-bold text-base mb-4 text-rose-100">Links Rápidos</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#home" class="text-rose-200/70 hover:text-white transition duration-300">Início</a></li>
+                            <li><a href="#about" class="text-rose-200/70 hover:text-white transition duration-300">Sobre Mim</a></li>
+                            <li><a href="#resume" class="text-rose-200/70 hover:text-white transition duration-300">Currículo</a></li>
+                            <li><a href="#projects" class="text-rose-200/70 hover:text-white transition duration-300">Projetos</a></li>
                         </ul>
                     </div>
                     
                     <div>
-                        <h4 class="font-bold text-lg mb-4">Contato</h4>
-                        <ul class="space-y-2">
-                            <li class="text-gray-400">leticiaxxss144@gmail.com</li>
-                            <li class="text-gray-400">+55 (81) 98651-6194</li>
-                            <li class="text-gray-400">Pernambuco, Brasil</li>
+                        <h4 class="font-bold text-base mb-4 text-rose-100">Contato</h4>
+                        <ul class="space-y-2 text-sm text-rose-200/70">
+                            <li>leticiaxxss144@gmail.com</li>
+                            <li>+55 (81) 98651-6194</li>
+                            <li>Pernambuco, Brasil</li>
                         </ul>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2026 Letícia Xavier. Todos os direitos reservados.</p>
+            <div class="border-t border-rose-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-rose-300/60">
+                <p class="mb-4 md:mb-0">© 2026 Letícia Xavier. Todos os direitos reservados.</p>
                 
                 <div class="flex space-x-6">
-                    <a href="https://www.linkedin.com/in/letícia-xavier-153124422" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/letícia-xavier-153124422" target="_blank" class="hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in text-lg"></i>
                     </a>
-                    <a href="https://github.com/leticiaxxavier144-create" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-github"></i>
+                    <a href="https://github.com/leticiaxxavier144-create" target="_blank" class="hover:text-white transition duration-300">
+                        <i class="fab fa-github text-lg"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hidden hover:bg-secondary transition duration-300">
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-rose-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hidden hover:bg-rose-600 transition duration-300 z-50">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Script JS Local -->
     <script src="script.js"></script>
 </body>
 </html>

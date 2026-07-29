@@ -1,7 +1,32 @@
-// Espera o DOM carregar completamente
 document.addEventListener('DOMContentLoaded', () => {
+    const darkButton = document.getElementById("dark-mode-btn");
 
-    // 1. Menu Mobile Toggle
+    if (darkButton) {
+        // Checa se o tema escuro estava salvo
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            darkButton.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        darkButton.addEventListener("click", () => {
+            document.documentElement.classList.toggle('dark');
+            document.body.classList.toggle('dark');
+
+            const isDark = document.body.classList.contains('dark');
+
+            if (isDark) {
+                darkButton.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                darkButton.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+
+    // Menu Mobile
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -9,28 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-    }
 
-    // 2. Dark Mode Toggle
-    const darkButton = document.getElementById("dark-mode-btn");
-
-    if (darkButton) {
-        darkButton.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-
-            if (document.body.classList.contains("dark-mode")) {
-                darkButton.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                darkButton.innerHTML = '<i class="fas fa-moon"></i>';
-            }
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
     }
 
-    // 3. Botão "Voltar ao topo" (Back to Top)
+    // Voltar ao topo
     const backToTopButton = document.getElementById('back-to-top');
-
     if (backToTopButton) {
-        // Exibe o botão quando faz scroll para baixo
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTopButton.classList.remove('hidden');
@@ -39,12 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Rola suavemente até o topo ao clicar
         backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 });
